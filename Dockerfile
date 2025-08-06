@@ -1,4 +1,5 @@
-FROM php:8.1-fpm
+# Use PHP 8.3 (you can also use 8.2 if needed)
+FROM php:8.3-fpm
 
 # System dependencies
 RUN apt-get update && apt-get install -y \
@@ -16,10 +17,10 @@ WORKDIR /var/www
 # Copy all files to the container
 COPY . .
 
-# Install dependencies
+# Install Laravel dependencies
 RUN composer install --optimize-autoloader --no-dev
 
-# Laravel cache clear and build
+# Laravel config/cache optimizations
 RUN php artisan config:cache
 RUN php artisan route:cache
 RUN php artisan view:cache
