@@ -11,3 +11,21 @@ services:
         generateValue: true
       - key: APP_DEBUG
         value: false
+
+      # 🔽 Add these database environment variables here
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: sql10.freesqldatabase.com
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        value: sql10793970
+      - key: DB_USERNAME
+        value: sql10793970
+      - key: DB_PASSWORD
+        value: 1gENeH4i8W
+
+      # Optional: force HTTPS
+      - key: APP_URL
+        value: https://office-manager-i9vj.onrender.com
